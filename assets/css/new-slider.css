@@ -1,0 +1,343 @@
+/* New Slider Styles - Created to avoid conflicts with existing slider */
+
+/* Main Slider Container */
+.ksh_slider_container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Slider Track */
+.ksh_slider_track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* Individual Slide */
+.ksh_slide {
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    min-height: 600px;
+}
+
+/* Content Area */
+.ksh_slide_content_area {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Content Container */
+.ksh_slide_content_inner {
+    position: relative;
+    z-index: 10;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Text Content */
+.ksh_slide_text {
+    max-width: 600px;
+}
+
+.ksh_slide_text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.ksh_slide_text h1 span {
+    color: #8dc63f;
+}
+
+.ksh_slide_text h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.ksh_slide_text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* Button Styles */
+.ksh_slide_buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.ksh_btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #8dc63f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.ksh_btn:hover {
+    background-color: #7ab62f;
+    transform: translateY(-3px);
+}
+
+.ksh_btn.outline {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.ksh_btn.outline:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Video Background */
+.ksh_video_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.ksh_video_background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.7;
+}
+
+/* Image Background with Overlay */
+.ksh_slide_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.ksh_slide_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ksh_slide_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+/* Navigation Controls */
+.ksh_slider_nav {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 20;
+}
+
+.ksh_slider_dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ksh_slider_dot.active {
+    background-color: #8dc63f;
+    transform: scale(1.2);
+}
+
+.ksh_slider_arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+.ksh_slider_arrow:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.ksh_slider_prev {
+    left: 20px;
+}
+
+.ksh_slider_next {
+    right: 20px;
+}
+
+/* Animation Classes */
+.ksh_zoom_animation img {
+    animation: kshZoomInOut 10s linear infinite;
+}
+
+@keyframes kshZoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.ksh_fade_animation {
+    animation: kshFadeIn 1.5s ease-in-out;
+}
+
+@keyframes kshFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.ksh_slide_animation {
+    animation: kshSlideIn 1.5s ease-in-out;
+}
+
+@keyframes kshSlideIn {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Text Animations */
+.ksh_slide_text h1 {
+    animation: kshFadeInDown 1s ease-in-out;
+}
+
+.ksh_slide_text h2 {
+    animation: kshFadeInUp 1.2s ease-in-out;
+}
+
+.ksh_slide_text p {
+    animation: kshFadeInLeft 1.4s ease-in-out;
+}
+
+.ksh_slide_buttons {
+    animation: kshFadeInRight 1.6s ease-in-out;
+}
+
+@keyframes kshFadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes kshFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes kshFadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes kshFadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .ksh_slide_text h1 {
+        font-size: 36px;
+    }
+    
+    .ksh_slide_text h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ksh_slide {
+        height: 80vh;
+    }
+    
+    .ksh_slide_text h1 {
+        font-size: 28px;
+    }
+    
+    .ksh_slide_text h2 {
+        font-size: 18px;
+    }
+    
+    .ksh_slide_content_inner {
+        padding: 30px;
+    }
+}

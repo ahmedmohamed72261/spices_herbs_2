@@ -1,0 +1,45 @@
+/* Contact Information Section Styles */
+.contact-info-section {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info-box {
+    margin-top: 20px;
+}
+
+.contact-info-item {
+    display: flex;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: #88c250;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon i {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.contact-text h5 {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.contact-text p {
+    margin: 0;
+    color: #666;
+}
